@@ -1,0 +1,33 @@
+__DEFINITION : 
+1. A virtual function is a function that we expect to override in the derived class.
+2. The primary use of a virtual method in C++ is to enable runtime polymorphism
+3.  if the derived class does not override a virtual function, the base class's implementation of the function is used. This is the default behavior in C++ when you use virtual methods.
+
+__TYPES : 
+=> virtual void Area() = 0; -> Pure virtual function 
+=> virtual void Area(){
+    // some code
+} -> regular virtual function
+
+**A pure virtual function in C++ is a declaration in a base class that serves as a placeholder for functionality that must be implemented by derived classes. It does not have a body or implementation in the base class. Instead, the = 0 syntax indicates that the function is pure virtual, meaning it has no implementation in the base class.
+
+**A pure virtual function does not return or output anything on its own because it cannot be called directly. The = 0 is not a return value; it is syntax that tells the compiler the function is abstract and must be overridden in derived classes.
+
+**  If the base class method is a regular virtual method (not a pure virtual one) and you forget to override it in the derived class, there will be no compile-time error. Instead, the base class implementation of the method will be used.
+
+
+
+// VVI ->
+    If you forget to override a pure virtual function in a derived class, the following happens:
+        1. The Derived Class Becomes Abstract
+            -> A derived class that does not override a pure virtual function remains abstract.
+            Abstract classes cannot be instantiated, so you'll get a compile-time error if you try to create an object of the derived class.
+
+
+__WHEN TO USE WHICH
+=> Use regular virtual methods when the base class provides a default behavior that derived classes can optionally override.
+=> Use pure virtual methods when you want to enforce that derived classes must provide their own implementation.
+
+
+
+

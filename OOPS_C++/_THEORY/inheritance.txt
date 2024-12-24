@@ -1,0 +1,29 @@
+__DEFINITION
+=> Inheritance is the concept in OOP which suggest that one class can be derived from the other class. The class which is derived from other class is called CHILD/ DERIVED class and the class from which it derives is called the BASE/PARENT/SUPER class.
+=> The child class can inherit all the attributes, methods, members and properties of the parent class. It can also have its own specefic properties and methods.
+=> TYPES OF INHERITANCE - 
+    i. Single Inheritance: One child class inherits from one parent class.
+         Example: Car inherits from Vehicle.
+    ii. Multiple Inheritance: A child class inherits from multiple parent classes.
+         Example: FlyingCar inherits from both Car and Airplane.
+    iii. Multilevel Inheritance: A class inherits from a child class, forming a chain.
+         Example: SportsCar inherits from Car, which inherits from Vehicle.
+    iv. Hierarchical Inheritance: Multiple classes inherit from the same parent class.
+         Example: Both Car and Bike inherit from Vehicle.
+    v. Hybrid Inheritance: A mix of any of the above types.
+
+
+__TYPES OF INHERITANCE MODIFIERS
+1. Public Inheritance Mode
+If we derive a subclass from a public base class. Then the public member of the base class will become public in the derived class and protected members of the base class will become protected in the derived class.
+
+Example:
+class ABC : public XYZ {...}              //  public derivation
+2. Protected Inheritance Mode
+If we derive a subclass from a Protected base class. Then both public members and protected members of the base class will become protected in the derived class.
+
+Example:
+
+class ABC : protected XYZ {...}       //  protected derivation
+3. Private Inheritance Mode
+If we derive a subclass from a Private base class. Then both public members and protected members of the base class will become private in the derived class. They can only be accessed by the member functions of the derived class.

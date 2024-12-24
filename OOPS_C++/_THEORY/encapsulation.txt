@@ -1,0 +1,9 @@
+__DEFINITION
+1. Encapsulation is the process of grouping all the data members, the methods and constructors in one place and one class. In onne class, we can operate on these data, call methods on this data and construct them. This is Encapsulation in object oriented programming.
+2. Encapsulation serves 2 main purposes - 
+    i. DATA HIDING - we can switch the location of data members from public to private modifier so that it cannot be accessed from diffrent parts of the program. This is really helpful if our data is very important and we dont want it to be altered or affected in any way by anyone or anything.
+
+    ii. GROUPING - it groups and stores all the data, the methods, constructors and destructors of a real world entity in one class only.
+
+3. Note: People often consider encapsulation as data hiding, but that's not entirely true.
+Encapsulation refers to the bundling of related fields and methods together. This can be used to achieve data hiding. Encapsulation in itself is not data hiding.

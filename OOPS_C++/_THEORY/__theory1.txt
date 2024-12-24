@@ -1,0 +1,37 @@
+__BASICS : 
+=> Object Oriented Programming is a commonly used Programming Paradigm which uses objects to classify real world data. These objects contain data as well as functions which can be used afterwards.
+
+=> A class is an entity which holds important data and functions which is reusable in the code. These classes can be used by creating the instance of the class.
+
+=> To use the data and access functions defined in the class, you need to create objects.
+
+__CONSTRUCTORS :
+=> A Constructor is a special function to the class which gets called automatically when an instance of the class is created. 
+=> A Constructor must have the same name as that of the class and also has no return type
+=> Generally the constructor must be put in the public modifier. (In rare cases elsewise)
+=> In a constructor The member initializer list is used to initialize the member variables of a class.
+=> Constructor overloading is when the class has diffrent constructors with diffrent number of parameters and arguments.
+
+=> Overloading must have diffrent parameters. There cannot be two constructors with same number of parameters.
+for eg - 
+    class Person{
+public:
+    int age;
+    Person() : age{70}{}
+    Person() : age{100}{}
+};
+This won't just work.
+
+__DESTRUCTORS
+=> A destructor is a special member function that is called automatically when an object goes out of scope or when we delete the object with the delete expression.
+=> If we don't define any destructor, move assignment, or move constructor in our class, then the C++ compiler will automatically create a default destructor with an empty body.
+=> A class can have only one destructor.
+=> If our classes has dynamic memory allocation, destructor must be added so that we can free up memory in it.
+=> Destructor gets called when the object goes out of the scope. means even if we dont deliberately destroy the object, the destructor gets called. WHY? because the complier moves out of the main function, so the object is not in the scope now, so destructor is called.
+
+=> WHY IS THE DESTRUCTOR SO IMPORTANT? The destructor is an essential part of object-oriented programming, particularly in languages like C++ that involve manual memory management. It is responsible for cleaning up resources used by an object when the object is no longer needed, typically when it goes out of scope or is explicitly deleted.
+
+__ACCESS MODIFIERS
+1. Public members can be used from anywhere
+2. Private members are not accessible anywhere
+3. Protected members are between both. They can be accessed in themselves and in derived classes (inheritance)

@@ -1,0 +1,7 @@
+1. Abstraction is basically the process in which get the output for something without knowing the mechanism behind it.
+    example 1 : we press a button in the mobile to click a picture and a picture is clicked. Neither we know nor are we displayed how the picture gets clicked by the mobile, what processes occur behind the scenes. We do not worry about them.
+    example 2 : we drive a car and we press the brakes. the car stops. we dont know how that happen or what process occur inside the engine and the car which stops it. we just get an output.
+
+2. Data abstraction is basically providing the essential details to the external world and hiding the behind the scene details.
+
+3. In the code example of '06_abstraction.cpp', we get to know whether the employee can be promoted or not. An outside user will just get the result he wont know how that occurs, what process is followed and what factors are taken in consideration. That is of no use to the user and hence not displayed to him.
