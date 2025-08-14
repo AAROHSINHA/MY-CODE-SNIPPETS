@@ -7,3 +7,8 @@ __DEFINITION
 
 3. Note: People often consider encapsulation as data hiding, but that's not entirely true.
 Encapsulation refers to the bundling of related fields and methods together. This can be used to achieve data hiding. Encapsulation in itself is not data hiding.
+
+__WHAT IT PROVIDES 
+1. Data Hiding - It allows us to hide data. Means all data cannot be used outside the class globally. This is usefull if there are variables that we don't want to share or be global such as passwords etc.
+2. Controlled Access - It realtes to Data Hiding. Because not all  data is accessible and some is even hidden to outside world...we have a controlled access over variables and methods.
+3. Improved Maintainability - Better and structured code...
