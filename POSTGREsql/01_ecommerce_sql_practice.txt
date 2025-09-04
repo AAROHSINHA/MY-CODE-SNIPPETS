@@ -1,0 +1,102 @@
+-- 📦 E-Commerce SQL Practice Questions
+-- Author: Aaroh Sinha (Learning MySQL)
+-- Description: Real-world SQL case with tough interview/project-level queries.
+-- You can use these to practice on your own MySQL/Postgres/SQLite setup.
+
+------------------------------------------------------------
+-- SCHEMA
+------------------------------------------------------------
+
+-- Customers table
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    city VARCHAR(50)
+);
+
+-- Orders table
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    status ENUM('PLACED','CANCELLED','SHIPPED','DELIVERED'),
+    amount DECIMAL(10,2),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+-- Order items table
+CREATE TABLE order_items (
+    item_id INT PRIMARY KEY,
+    order_id INT,
+    product_name VARCHAR(100),
+    quantity INT,
+    price_per_unit DECIMAL(10,2),
+    FOREIGN KEY (order_id) REFERENCES orders(order_id)
+);
+
+------------------------------------------------------------
+-- TEST DATA (SAMPLE INSERTS)
+------------------------------------------------------------
+
+INSERT INTO customers VALUES
+(1, 'Alice', 'alice@example.com', 'Delhi'),
+(2, 'Bob', 'bob@example.com', 'Mumbai'),
+(3, 'Charlie', 'charlie@example.com', 'Delhi'),
+(4, 'David', 'david@example.com', 'Bangalore'),
+(5, 'Eva', 'eva@example.com', 'Mumbai');
+
+INSERT INTO orders VALUES
+(101, 1, '2024-01-15', 'DELIVERED', 500.00),
+(102, 1, '2024-03-01', 'CANCELLED', 200.00),
+(103, 2, '2024-01-20', 'DELIVERED', 1500.00),
+(104, 2, '2024-03-15', 'DELIVERED', 700.00),
+(105, 3, '2024-01-10', 'PLACED', 300.00),
+(106, 4, '2024-02-05', 'DELIVERED', 1200.00),
+(107, 5, '2024-03-05', 'SHIPPED', 800.00);
+
+INSERT INTO order_items VALUES
+(1001, 101, 'Laptop', 1, 500.00),
+(1002, 102, 'Mouse', 2, 100.00),
+(1003, 103, 'Phone', 3, 500.00),
+(1004, 104, 'Keyboard', 2, 350.00),
+(1005, 105, 'Tablet', 1, 300.00),
+(1006, 106, 'Monitor', 2, 600.00),
+(1007, 107, 'Headphones', 4, 200.00);
+
+------------------------------------------------------------
+-- QUESTIONS
+------------------------------------------------------------
+
+-- 1. Top Spenders
+-- Get the top 5 customers who spent the most in the last 90 days on DELIVERED orders.
+
+-- 2. Repeat Customers
+-- Find customers who placed more than 3 orders, but at least 1 order was CANCELLED.
+
+-- 3. Best Selling Products
+-- Find the top 3 products (by total quantity sold) in each month of 2024.
+
+-- 4. Order Status Funnel
+-- For each month, show how many orders were PLACED, SHIPPED, and DELIVERED.
+
+-- 5. Customer Retention
+-- Find customers who placed their first order in January 2024 and also placed at least one order in March 2024.
+
+-- 6. Big Basket Orders
+-- Find orders where total items > 5 AND total order amount > 1000.
+
+-- 7. Average Order Value by City
+-- For each city, find the average order value. Only include cities with >=10 unique customers.
+
+-- 8. Running Total
+-- For each customer, show cumulative spending over time ordered by order_date.
+
+------------------------------------------------------------
+-- NOTES
+------------------------------------------------------------
+-- 1. Use GROUP BY, HAVING for aggregates.
+-- 2. Use JOIN to connect customers, orders, and order_items.
+-- 3. Use window functions like ROW_NUMBER(), RANK(), SUM() OVER() for advanced queries.
+-- 4. For date filtering, use functions like DATE_FORMAT(), YEAR(), MONTH(), CURDATE(), INTERVAL.
+-- 5. Practice writing both simple and optimized versions.
